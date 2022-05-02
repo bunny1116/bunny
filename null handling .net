@@ -1,0 +1,13 @@
+----------------------adding null manually in .net code...........				
+				Try
+            Oracnn.Open()
+            dadsites.Fill(dstsites)
+            If dstsites IsNot Nothing And dstsites.Tables.Count > 0 Then
+                getsitesMinusSchools = dstsites.Tables(0)
+            Else
+                Dim dt As DataTable
+                dt = New DataTable("SiteNames")
+                dt.Columns.Add("site_id", GetType(System.Int32))
+                dt.Columns.Add("site_name", GetType(System.String))
+                getsitesMinusSchools = dt
+            End If
